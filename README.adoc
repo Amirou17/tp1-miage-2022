@@ -2,7 +2,7 @@
 
 NOTE: TP de trois slots de 1h20
 
-## Nom du(des) étudiant(e)(s) de ce monôme/binôme 
+## DIALLO Thièrno Amirou && BARRY Thierno Boubacar
 WARNING: NE PAS OUBLIER DE MENTIONNER LES DEUX NOMS SI VOUS ETES EN BINOME!
 
 #XXX# (et #YYY#)
@@ -38,9 +38,10 @@ TIP: [Rappel Git] Trois dépôts sont ici utilisés: le dépot Github de l'ensei
 * Observer le code du projet `todolist-debut-ex1`
 
 *Le code est-il structuré en couches ? Quel problèmes ce code peut-il poser ?*
+Oui le code est structuré en couche.
 
 *Où se trouve le code métier (voir la règle de gestion RG 1) ?*
-
+Le code métier se trouve dans la classe TodoListController.java
 *Cette règle est-elle facilement testable par un test unitaire ?*
 
 * Lancer une base PostgreSQL en Docker dans un terminal (on lance ici la base en mode interactif pour visualiser son activité. Pour la lancer en tâche de fond, remplacer les options `it` par `d` comme 'daemon'):
@@ -48,13 +49,16 @@ TIP: [Rappel Git] Trois dépôts sont ici utilisés: le dépot Github de l'ensei
 docker run -it -e POSTGRES_PASSWORD=password -p 5432:5432 postgres
 ```
 *Expliquer cette ligne de commande (y compris les options utilisées)*
-
+Docker run permet de lancer un conteneur postgres
+-it lancer le conteneur en mode interactif pour visualiser son activité
+-e permet de modifier la variable d'environnment POSTGRES_PASSWORD à password 
+-p permet de specifier le port
 * Compléter le code manquant dans la méthode `TodoListController.createTodoItem()`
 
 *Pourquoi `todoItemRepository` est-il `null` ? Quelle est la meilleure façon de l'injecter ?*
-
+La meilleure façon de l'injecter est de l'injecter dans le constructeur
 * Modifier le code en conséquence.
-
+todoItemRepository était null car il n'était pas injecté
 * Tester vos endpoints avec un client REST.
 
 
