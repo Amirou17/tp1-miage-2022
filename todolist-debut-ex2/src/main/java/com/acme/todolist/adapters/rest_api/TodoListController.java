@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -42,7 +43,7 @@ public class TodoListController {
 	
 	// Endpoint de type POST vers "/todos"
 	@PostMapping("/todos")
-	@ResponseStatus
+	@ResponseStatus(code = HttpStatus.CREATED)
 	public void ajouterItem(@RequestBody TodoItem item) {
 		this.addTodoItemQuery.addTodoItem(item);
 	}
